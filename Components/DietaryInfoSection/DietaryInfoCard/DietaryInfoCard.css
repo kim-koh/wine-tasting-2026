@@ -1,0 +1,251 @@
+/* MOBIlE DEFAULT - 480px */
+/* ── Card shell ──────────────────────────────────────────── */
+.dietary-card {
+  position: relative;
+  width: 100%;
+  height: 275px; 
+  background: var(--primary-lightest);
+  border: 1px solid var(--secondary-dark);
+  border-radius: var(--radius-big);
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  /* no hover transform — tap, not hover, on mobile */
+  -webkit-tap-highlight-color: transparent;
+}
+ 
+/* hover only on pointer devices (desktops) */
+@media (hover: hover) {
+  .dietary-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
+    transform: translateY(-2px);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+}
+ 
+/* ── Image block ─────────────────────────────────────────── */
+.dietary-card__image-wrapper {
+  position: relative;
+  /* aspect-ratio keeps height proportional regardless of card width */
+  aspect-ratio: 3 / 2;
+  background: var(--subtle);
+  overflow: hidden;
+  max-height: 50%; /* cap image height to keep cards uniform */
+  width: 100%; 
+}
+ 
+.dietary-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 6px;
+}
+ 
+.dietary-card__image-overlay { display: none; }
+
+.dietary-card__veg {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: var(--secondary-dark);
+  color: white;
+  font-size: 0.5rem;
+  font-weight: 600;
+  padding: 3px 4px;
+  border-radius: var(--radius-big);
+  border: solid 2px var(--primary-light); 
+}
+
+/* ── Header row ────────────────────────────────────────────── */
+.dietary-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.dietary-card__name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--secondary-dark);
+  /* prevent long names from blowing out the card */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+ 
+.dietary-card__category {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--secondary-med);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 55%;
+} 
+ 
+/* ── Divider ─────────────────────────────────────────────── */
+.dietary-card__divider {
+  height: 1px;
+  background: var(--secondary-med);
+  margin-bottom: 6px;
+}
+
+/* ── Body ────────────────────────────────────────────────── */
+.dietary-card__body {
+  padding: 8px 10px 10px;
+}
+
+.dietary-card__description {
+  font-size: 0.75rem;
+  color: var(--secondary-dark);
+  margin-bottom: 4px;
+  height: 30%; /* fixed height to keep cards uniform */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dietary-card__allergen-section {
+  position: absolute;
+  bottom: 0px; 
+}
+
+.dietary-card__allergen-info-label {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--secondary-med);
+  margin: 0 0 3px;
+}
+
+.dietary-card__allergen-info {
+  font-size: 0.65rem;
+  color: var(--secondary-med);
+  height: 20px; /* fixed height to keep cards uniform */
+  overflow: hidden;
+}
+
+/* Mid-size mobile (larger phones / small landscape) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .dietary-card {
+    height: 300px;
+  }
+
+  .dietary-card__image {
+    padding: 8px;
+  }
+
+  .dietary-card__veg {
+    top: 8px;
+    right: 8px;
+    font-size: 0.58rem;
+    padding: 3px 6px;
+  }
+
+  .dietary-card__body {
+    padding: 10px 12px 12px;
+  }
+
+  .dietary-card__name {
+    font-size: 0.95rem;
+  }
+
+  .dietary-card__category {
+    font-size: 0.68rem;
+  }
+
+  .dietary-card__description {
+    font-size: 0.82rem;
+    line-height: 1.35;
+    height: 70px;
+    margin-bottom: 6px;
+  }
+
+  .dietary-card__allergen-info-label {
+    font-size: 0.62rem;
+  }
+
+  .dietary-card__allergen-info {
+    font-size: 0.72rem;
+    height: 28px;
+  }
+}
+
+/* Large tablet */
+@media screen and (min-width: 768px) {
+  .dietary-card {
+    height: 340px;
+    border-radius: 18px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .dietary-card__image-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  .dietary-card__image {
+    padding: 10px;
+  }
+
+  .dietary-card__veg {
+    top: 10px;
+    right: 10px;
+    font-size: 0.65rem;
+    padding: 4px 7px;
+  }
+
+  .dietary-card__body {
+    padding: 12px 14px 14px;
+  }
+
+  .dietary-card__header {
+    margin-bottom: 6px;
+  }
+
+  .dietary-card__name {
+    font-size: 1.05rem;
+    line-height: 1.25;
+  }
+
+  .dietary-card__category {
+    font-size: 0.78rem;
+    max-width: 50%;
+  }
+
+  .dietary-card__divider {
+    margin-bottom: 10px;
+  }
+
+  .dietary-card__description {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    height: 92px;
+    margin-bottom: 8px;
+  }
+
+  .dietary-card__allergen-info-label {
+    font-size: 0.68rem;
+    margin-bottom: 5px;
+  }
+
+  .dietary-card__allergen-info {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    height: 40px;
+  }
+}
+
+/* larger desktop refinement */
+@media screen and (min-width: 1200px) {
+  .dietary-card {
+    height: 360px;
+  }
+
+  .dietary-card__description {
+    height: 100px;
+  }
+}

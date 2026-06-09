@@ -1,0 +1,46 @@
+.sticky-menu {
+    /* position: sticky; */
+    top: 0;
+    z-index: 1000; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sticky-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.sticky-menu li {
+    display: inline;
+}
+
+.sticky-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.sticky-menu a:hover {
+    color: #a83232;
+}
+
+.sticky-menu__link {
+    height: 50px; 
+    width: 50px; 
+}
+
+
+/* RIGHT SIDE */
+.event-details__info {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}

@@ -1,0 +1,94 @@
+.admin-content {
+  width: 100%;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Password Container */
+.admin-content__password-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+/* All Controls  */
+.admin-controls, .admin-controls-live, .admin-controls-test {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 100%;
+}
+
+.admin-controls select,
+.admin-controls input,
+.admin-controls button {
+  margin-top: 8px;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: var(--secondary-med);
+  background-color: white;
+  border: solid var(--secondary-med) 2px;
+}
+
+.admin-controls h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary-dark, #6b6b6b);
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary-med, #6b6b6b); 
+}
+
+p {
+  text-align: center; 
+}
+
+/* Event Mode Control */
+.admin-controls-live__event-mode, .admin-controls-test__event-mode {
+  width: 500px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: solid var(--secondary-med, #6b6b6b) 1px;
+  padding: 12px;
+  background-color: var(--primary-lightest);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Done Testing - Reset */
+.admin-controls-test__clear-local-storage {
+  width: 500px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: solid var(--secondary-med, #6b6b6b) 1px;
+  padding: 12px;
+  background-color: var(--primary-lightest);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Override Countdown */
+.admin-controls-test__override-countdown {
+  width: 500px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: solid var(--secondary-med, #6b6b6b) 1px;
+  padding: 12px;
+  background-color: var(--primary-lightest);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

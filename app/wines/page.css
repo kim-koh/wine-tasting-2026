@@ -1,0 +1,8 @@
+.nav-menu {
+    color: red;
+    width: 300px; 
+}
+
+#wines-page {
+    margin-top: var(--main-padding-top); 
+}

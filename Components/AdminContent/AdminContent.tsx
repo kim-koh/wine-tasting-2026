@@ -8,7 +8,7 @@ import "./AdminContent.css";
 export default function AdminContent() {
     const { PARTY_STATES, setPartyStateLocal, partyStateLocal, updatePartyStateLive, partyStateLive, getPartyStateLive, setCountdownState } = useParty();
     const [password, setPassword] = useState("");
-    const isAuthorized = password === process.env.ADMIN_PASSWORD || (typeof document !== "undefined" && document.cookie.includes("admin=true"));
+    const isAuthorized = password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD || (typeof document !== "undefined" && document.cookie.includes("admin=true"));
     if (isAuthorized) {
         document.cookie = "admin=true; path=/"; // Set cookie to remember authorization
     }

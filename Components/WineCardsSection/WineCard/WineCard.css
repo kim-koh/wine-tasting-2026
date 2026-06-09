@@ -1,0 +1,202 @@
+/* MOBILE DEFAULT - 480px */
+/* ── Card shell ──────────────────────────────────────────── */
+.wine-card {
+  width: 100%;
+  height: 250px; 
+  background: var(--primary-lightest);
+  border: 1px solid var(--secondary-dark);
+  border-radius: var(--radius-big);
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  /* no hover transform — tap, not hover, on mobile */
+  -webkit-tap-highlight-color: transparent;
+}
+ 
+/* hover only on pointer devices (desktops) */
+@media (hover: hover) {
+  .wine-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
+    transform: translateY(-2px);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+}
+ 
+/* ── Image block ─────────────────────────────────────────── */
+.wine-card__image-wrapper {
+  position: relative;
+  /* aspect-ratio keeps height proportional regardless of card width */
+  aspect-ratio: 3 / 2;
+  background: var(--subtle);
+  overflow: hidden;
+}
+ 
+.wine-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 6px;
+}
+ 
+.wine-card__image-overlay { display: none; }
+
+.wine-card__year { 
+  position: absolute;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--secondary-dark);
+  margin: 6px;
+  right: 0px; 
+}
+
+.wine-card__done-badge {
+  position: absolute;
+  top: 8px;
+  left: 6px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--wine-red);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wine-card__wine-glass-icon {
+  height: 42px;
+  width: auto;
+}
+
+.wine-card__done-checkmark {
+  position: absolute;
+  height: 18px; 
+  width: auto; 
+  top: 16px;
+  left: 22px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--wine-red);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+ 
+/* ── Body ────────────────────────────────────────────────── */
+.wine-card__body {
+  padding: 8px 10px 10px;
+}
+ 
+/* ── Meta row ────────────────────────────────────────────── */
+.wine-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+ 
+.wine-card__color-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--secondary-med);
+}
+ 
+.wine-card__color-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--wine-red);
+  flex-shrink: 0;
+}
+ 
+[data-color="white"] .wine-card__color-dot { background: #c8a84b; }
+[data-color="rosé"]  .wine-card__color-dot { background: #d4788a; }
+[data-color="orange"] .wine-card__color-dot { background: #d47c4e; }
+ 
+.wine-card__winery {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--secondary-med);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 55%;
+}
+ 
+/* ── Wine name ───────────────────────────────────────────── */
+.wine-card__name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--secondary-dark);
+  margin: 0 0 6px;
+  /* prevent long names from blowing out the card */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+ 
+/* ── Divider ─────────────────────────────────────────────── */
+.wine-card__divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 6px;
+}
+ 
+/* ── Varietals ───────────────────────────────────────────── */
+.wine-card__varietals-preview {
+  margin: 0;
+  font-size: 0.7rem;
+  color: var(--secondary-dark);
+  line-height: 1.3;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;      /* show up to 2 lines */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.wine-card__varietals-label {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--secondary-med);
+  margin: 0 0 3px;
+}
+ 
+.wine-card__varietals-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+ 
+.wine-card__varietal {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  font-size: 0.7rem;
+  color: var(--secondary-dark);
+  line-height: 1.3;
+}
+ 
+.wine-card__varietal-index {
+  font-size: 0.55rem;
+  color: var(--secondary-med);
+  min-width: 12px;
+  flex-shrink: 0;
+}
+
+/* LARGE MOBILE 480px - 767px */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  
+}

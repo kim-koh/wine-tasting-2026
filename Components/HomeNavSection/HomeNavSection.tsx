@@ -22,7 +22,7 @@ export default function HomeBottomSection() {
             <div className='main__actions'>
                 <h2 className='main__label'>Actions</h2>
                 {partyStateLocal === 'During event (show wine images)' || partyStateLocal === 'After event' ? <SendSummaryEmailButton style='small' /> : null}
-                <a href={process.env.GOOGLE_PHOTOS_ALBUM_LINK} className='photo-album-btn'>
+                <a href={process.env.NEXT_PUBLIC_GOOGLE_PHOTOS_ALBUM_LINK} className='photo-album-btn'>
                     <Image src={GooglePhotosIcon} alt="Google Photos Icon" className='google-photos-icon' />
                     Google Photos Album
                 </a>

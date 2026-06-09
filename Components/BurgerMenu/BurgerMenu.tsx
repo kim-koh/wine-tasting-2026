@@ -106,7 +106,7 @@ export default function BurgerMenu({ className }: BurgerMenuProps) {
                     {/* Actions section */}
                     <p className="nav-section-label">Actions</p>
                     <SendSummaryEmailButton onClick={() => setOpen(false)} className="nav-item" />
-                    <a href={process.env.GOOGLE_PHOTOS_ALBUM_LINK} className="nav-item" 
+                    <a href={process.env.NEXT_PUBLIC_GOOGLE_PHOTOS_ALBUM_LINK} className="nav-item" 
                         onClick={() => {
                             setOpen(false)
                         }}

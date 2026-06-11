@@ -66,7 +66,7 @@ const WineCard: React.FC<WineCardProps> = ({ data }) => {
         </div>
       </article>
  
-      {panelOpen && <WineDetailPanel data={data} storageKey={storageKey} onRated={() => setTasted(true)} onClose={() => setPanelOpen(false)}/>}
+      {panelOpen && <WineDetailPanel data={data} storageKey={storageKey} showWineBottle={showWineBottle} onRated={() => setTasted(true)} onClose={() => setPanelOpen(false)}/>}
     </>
   );
 };

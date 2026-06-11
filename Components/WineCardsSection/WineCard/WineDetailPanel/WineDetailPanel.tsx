@@ -5,6 +5,7 @@ import Image from "next/image";
 import { WineCardDataType } from "@/graphql/getAllWines";
 import StarRating from "../StarRating/StarRating";
 // Icons
+import PlaceholderWineImage from '@/public/mystery bottle.jpg';
 import HideIcon from "@/public/icons/hide-icon.png"
 import ShowIcon from "@/public/icons/show-icon.png"
 // CSS
@@ -12,7 +13,8 @@ import "./WineDetailPanel.css";
 
 interface DetailPanelProps {
   data: WineCardDataType;
-  storageKey: string; 
+  storageKey: string;
+  showWineBottle: boolean;
   onRated: () => void;
   onClose: () => void;
 }
@@ -22,7 +24,7 @@ interface WineNotes {
   freeText: string;
 }
  
-const WineDetailPanel: React.FC<DetailPanelProps> = ({ data, storageKey, onRated, onClose }) => {
+const WineDetailPanel: React.FC<DetailPanelProps> = ({ data, storageKey, showWineBottle, onRated, onClose }) => {
   const { varietals, wineName, winery, year, color, picture, alcoholContent, description, origin } = data;
   const cleanVarietals = varietals.map((v) => v.text.replace(/\\n/g, "").trim()).filter(Boolean);
   
@@ -101,7 +103,7 @@ const WineDetailPanel: React.FC<DetailPanelProps> = ({ data, storageKey, onRated
  
         {/* Hero */}
         <div className="panel__hero">
-          <img src={picture.url} alt={`${wineName} bottle`} className="panel__image" />
+          <img src={showWineBottle ? picture.url : PlaceholderWineImage.src} alt={`${wineName} bottle`} className="panel__image" />
           <div className="panel__hero-info">
             <div className="panel__hero-left">
               <div className="panel__meta">

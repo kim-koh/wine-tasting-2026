@@ -33,7 +33,7 @@ type PartyProviderProps = {
   initialState?: PartyState;
 };
 
-export function PartyProvider({ children, initialState = PARTY_STATES.beforeEvent }: PartyProviderProps) {
+export function PartyProvider({ children, initialState = PARTY_STATES.afterEvent }: PartyProviderProps) {
   // Party state management with localStorage persistence
   const [partyStateLive, setPartyStateLive] = useState<PartyState>(initialState);
   const [partyStateLocal, setPartyStateLocal] = useState<PartyState>(partyStateLive || initialState);

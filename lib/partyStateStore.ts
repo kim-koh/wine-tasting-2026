@@ -7,7 +7,7 @@ export const PARTY_STATES = {
 
 export type PartyState = (typeof PARTY_STATES)[keyof typeof PARTY_STATES];
 
-let partyState: PartyState = PARTY_STATES.beforeEvent;
+let partyState: PartyState = PARTY_STATES.afterEvent;
 const listeners = new Set<(state: PartyState) => void>();
 
 export function getPartyState() {
